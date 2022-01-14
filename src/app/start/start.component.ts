@@ -18,35 +18,35 @@ export class StartComponent implements OnInit {
   constructor(private OktaWidgetService: OktaWidgetService, private OktaSDKAuthService: OktaSDKAuthService, private _snackBar: MatSnackBar, public OktaConfigService:OktaConfigService,) { }
 
   async ngOnInit()  {
-    this.OktaWidgetService.CloseWidget();
+    // this.OktaWidgetService.CloseWidget();
     
-    this.strUserSession = await this.authService.session.exists()
-      .then(function (exists) {
-        if (exists) {
-          // logged in
-          console.log('Session to Okta : ' + exists);
-          //window.location.replace(this.OktaConfigService.strRedirectURL);
-          window.location.replace('https://jpn-corp-ae.oktapreview.com/app/UserHome');
-          return exists
-        } else {
-          // not logged in
-          console.log('Session to Okta : ' + exists);
-          //window.location.replace(this.OktaConfigService.strPostLogoutURL);
-          window.location.replace('https://192.168.1.210:4200/jpn-corp-ae-siw');
-          return exists
-        }
-      });
-    // switch (this.strUserSession) {
-    //   case false:
-    //     //this.OktaWidgetService.login();
-    //     window.location.replace(this.OktaConfigService.strPostLogoutURL);
-    //     break;
+    // this.strUserSession = await this.authService.session.exists()
+    //   .then(function (exists) {
+    //     if (exists) {
+    //       // logged in
+    //       console.log('Session to Okta : ' + exists);
+    //       //window.location.replace(this.OktaConfigService.strRedirectURL);
+    //       window.location.replace('https://jpn-corp-ae.oktapreview.com/app/UserHome');
+    //       return exists
+    //     } else {
+    //       // not logged in
+    //       console.log('Session to Okta : ' + exists);
+    //       //window.location.replace(this.OktaConfigService.strPostLogoutURL);
+    //       window.location.replace('https://192.168.1.210:4200/jpn-corp-ae-siw');
+    //       return exists
+    //     }
+    //   });
+    // // switch (this.strUserSession) {
+    // //   case false:
+    // //     //this.OktaWidgetService.login();
+    // //     window.location.replace(this.OktaConfigService.strPostLogoutURL);
+    // //     break;
 
-    //   case true:
-    //     window.location.replace(this.OktaConfigService.strRedirectURL);
-    //     break;
+    // //   case true:
+    // //     window.location.replace(this.OktaConfigService.strRedirectURL);
+    // //     break;
 
-    // }
+    // // }
   }
 
 }
