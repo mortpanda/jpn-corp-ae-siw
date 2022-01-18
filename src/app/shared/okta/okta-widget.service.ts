@@ -76,6 +76,7 @@ export class OktaWidgetService {
     }).then(function (tokens) {
 
       oktaSignIn.authClient.tokenManager.setTokens(tokens);
+      console.log(oktaSignIn)
       oktaSignIn.remove();
       const idToken = tokens.idToken;
       console.log("Hello, " + idToken.claims.email + "! You just logged in! :)");

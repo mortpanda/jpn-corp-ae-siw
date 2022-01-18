@@ -18,7 +18,7 @@ export class StartComponent implements OnInit {
   constructor(private OktaWidgetService: OktaWidgetService, private OktaSDKAuthService: OktaSDKAuthService, private _snackBar: MatSnackBar, public OktaConfigService:OktaConfigService,) { }
 
   async ngOnInit()  {
-    this.OktaWidgetService.CloseWidget();
+    // this.OktaWidgetService.CloseWidget();
     
     this.strUserSession = await this.authService.session.exists()
       .then(function (exists) {
