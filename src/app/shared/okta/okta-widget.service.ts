@@ -70,6 +70,7 @@ export class OktaWidgetService {
       
     });
     console.log(OktaScope)
+    
     var myMFADone = await oktaSignIn.showSignInToGetTokens({
       el: '#okta-signin-container'
     }).then(function (tokens) {
@@ -79,7 +80,7 @@ export class OktaWidgetService {
       const idToken = tokens.idToken;
       console.log("Hello, " + idToken.claims.email + "! You just logged in! :)");
       window.location.replace(OktaRedirect);
-      //window.location.replace('https://jpn-corp-ae.oktapreview.com/app/UserHome');
+      // window.location.replace('https://jpn-corp-ae.oktapreview.com/app/UserHome');
       return true;
 
     }).catch(function (err) {
